@@ -1,7 +1,7 @@
 import { BehaviorSubject, Observable, OperatorFunction } from "rxjs";
 import { audit, filter, mergeMap, tap } from "rxjs/operators";
 
-export function auditWith<T, R>(
+export default function auditWith<T, R>(
   callback: (value: T) => Promise<any>
 ): OperatorFunction<T, R> {
   const freeToRun = new BehaviorSubject(true);
